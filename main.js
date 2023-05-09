@@ -14,6 +14,7 @@ oyamaLogo.update = function () {
   this.rotate += 30;
   this.position.x+=10
   this.position.y+=15
+  this.position.y+=this.motion.y
 };
 
 function update() {
