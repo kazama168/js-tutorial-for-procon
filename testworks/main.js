@@ -1,5 +1,10 @@
-let a=15;
-let b=20;
-let c=5;
-let ans=(2*a/c)*b;
-console.log(ans);
+
+let a = 70;
+let b = 40;
+if (a>b){
+    console.log("a is bigger than b");
+} else if (a<b){
+    console.log("a is smaller than b");
+} else {
+    console.log("a is equal to b");
+}

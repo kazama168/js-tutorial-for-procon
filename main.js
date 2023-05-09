@@ -3,6 +3,7 @@ const MainCanvas = document.getElementById("MainCanvas");
 const MainContext = MainCanvas.getContext("2d");
 const GameArea = new CanvasManager(new Vector2(1280, 720), MainCanvas);
 GameArea.refresh();
+const keyInput = new keyInputManager();
 
 //回り続ける小山高専
 let oyamaLogo = new CanvasComponents({
@@ -11,10 +12,18 @@ let oyamaLogo = new CanvasComponents({
   position: new Vector2(GameArea.x / 2, GameArea.y / 2),
 });
 oyamaLogo.update = function () {
-  this.rotate += 30;
-  this.position.x+=10
-  this.position.y+=15
-  this.position.y+=this.motion.y
+  if(keyInput.IsPressed("ArrowLeft")){
+    this.position.x-=10;
+  }
+  if(keyInput.IsPressed("ArrowRight")){
+    this.position.x+=10;
+  }
+  if(keyInput.IsPressed("ArrowUp")){
+    this.position.y-=5;
+  }
+  if(keyInput.IsPressed("ArrowDown")){
+    this.position.y+=5;
+  }
 };
 
 function update() {
